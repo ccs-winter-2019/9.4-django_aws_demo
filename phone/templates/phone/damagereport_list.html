@@ -1,0 +1,16 @@
+{% extends 'phone/base.html' %}
+
+{% block content %}
+
+    <a href="{% url 'phone:report_create' %}">Create Damage Report</a>
+
+    <ul>
+    {% for report in object_list %}
+        <li>
+            {{ report.title }} - {{ report.broken_phone.name }}<br/>
+            <img src="{{ report.broken_phone.url }}" width="200"/>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

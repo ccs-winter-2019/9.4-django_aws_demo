@@ -1,0 +1,13 @@
+{% extends 'phone/base.html' %}
+
+{% block content %}
+
+    <form method="post" action="{% url 'phone:report_create' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Send Report"/>
+    </form>
+
+{% endblock content %}
